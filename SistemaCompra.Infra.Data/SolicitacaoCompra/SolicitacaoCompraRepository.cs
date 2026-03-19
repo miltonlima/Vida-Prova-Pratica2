@@ -23,6 +23,11 @@ namespace SistemaCompra.Infra.Data.SolicitacaoCompra
                 .FirstOrDefaultAsync(s => s.Id == id);
         }
 
+        public void RegistrarCompra(SolicitacaoAgg.SolicitacaoCompra solicitacaoCompra)
+        {
+            context.Set<SolicitacaoAgg.SolicitacaoCompra>().Add(solicitacaoCompra);
+        }
+
         public async Task RegistrarCompraAsync(SolicitacaoAgg.SolicitacaoCompra solicitacaoCompra)
         {
             await context.Set<SolicitacaoAgg.SolicitacaoCompra>().AddAsync(solicitacaoCompra);
